@@ -40,6 +40,7 @@
 | `firestore.rules` | Firebase 보안 규칙 (나만 읽고 쓰게) |
 | `.claude/` | Claude Code용 명령어(스킬)와 검수 에이전트 |
 | `CLAUDE.md` | Claude가 매번 읽는 규칙 |
+| `GUIDE_FOR_CLAUDE.md` | Claude가 사용자를 안내하는 방법 (진행 상황 파악, 브랜드 맞춤 질문, 안전 원칙) |
 | `examples/` | 연습용 예시 대본 |
 
 `/menu`를 입력하면 전체 명령어를 볼 수 있습니다.
