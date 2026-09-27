@@ -20,7 +20,7 @@ git clone https://github.com/philosophyAIEDU/260927contents.git my-contents
 cd my-contents
 claude
 ```
-Claude가 켜지면 **`/start`** 라고 입력하세요. 지금 해야 할 일을 하나씩 안내하고, 내 브랜드·사이트 주소·GitHub 저장소를 물어 설정합니다. 자세한 설명은 **[TUTORIAL.md](TUTORIAL.md)**.
+Claude가 켜지면 **"뭐부터 해야 해요?"** 라고 물어보거나 **`/start`** 라고 입력하세요. Claude가 세팅이 어디까지 됐는지 자동으로 점검해 두었다가 다음 할 일을 하나씩 알려 줍니다. 지금 해야 할 일을 하나씩 안내하고, 내 브랜드·사이트 주소·GitHub 저장소를 물어 설정합니다. 자세한 설명은 **[TUTORIAL.md](TUTORIAL.md)**.
 
 준비물: [Claude Code](https://claude.com/claude-code), [Node.js](https://nodejs.org) 20.6 이상, 구글 계정(Firebase 무료 플랜), 내 사이트와 그 GitHub 저장소. 유튜브 영상을 가져오려면 [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
