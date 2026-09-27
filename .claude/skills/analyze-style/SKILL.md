@@ -5,7 +5,7 @@ description: 올라간 내 콘텐츠(processed/)를 분석해 빈 템플릿인 v
 
 # /analyze-style — 내 말투와 성공 패턴 초안 만들기
 
-작업 폴더: 이 프로젝트 폴더(저장소를 내려받은 폴더). 초고 스킬(`/thread-draft` 등)은 `voice.md`와 `structure.md`가 있어야 시작하므로, **처음 한 번** 이 스킬로 초안을 만든다.
+작업 폴더: 이 프로젝트 폴더(저장소를 내려받은 폴더). 초고(`/draft`, `/auto`)는 `voice.md`와 `structure.md`가 있어야 시작하므로, **처음 한 번** 이 스킬로 초안을 만든다.
 
 ## 절차
 1. `CLAUDE.md`를 읽는다.

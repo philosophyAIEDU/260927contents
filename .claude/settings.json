@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/brand.mjs)",
+      "Bash(node scripts/extract.mjs:*)",
+      "Bash(node scripts/precheck.mjs:*)",
+      "Bash(node --env-file=.env scripts/precheck.mjs:*)",
+      "Bash(node scripts/upload.mjs:*)",
+      "Bash(node --env-file=.env scripts/upload.mjs:*)",
+      "Bash(node scripts/save-output.mjs:*)",
+      "Bash(node --env-file=.env scripts/save-output.mjs:*)",
+      "Bash(node --env-file=.env scripts/enrich.mjs:*)",
+      "Bash(node scripts/install-admin.mjs:*)",
+      "Bash(git -C site-repo pull:*)",
+      "Bash(git -C site-repo status:*)",
+      "Bash(date:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir -p raw/hold:*)",
+      "Bash(mkdir -p processed/_hold:*)",
+      "Bash(mv raw/:*)",
+      "Bash(mv processed/:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./keys/**)"
+    ]
+  }
+}
