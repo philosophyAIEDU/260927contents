@@ -75,6 +75,8 @@ export function precheck(docs, others, { allowMissing = [] } = {}) {
       if (isComment && o.parent_id !== doc.parent_id) continue; // 댓글은 같은 부모 안에서만 비교
       if (doc.source_file && o.source_file === doc.source_file && !isComment) problems.push(`원본 파일이 ${where}와 같음 (${doc.source_file})`);
       if (doc.youtube_id && o.youtube_id === doc.youtube_id) problems.push(`같은 유튜브 영상이 ${where}에 이미 있음 (${doc.youtube_id})`);
+      if (doc.source_url && o.source_url === doc.source_url) problems.push(`같은 글 주소가 ${where}에 이미 있음 (${doc.source_url})`);
+      if (doc.repo_path && o.repo_path === doc.repo_path) problems.push(`같은 저장소 글이 ${where}에 이미 있음 (${doc.repo_path})`);
       if (body && hash(o.body ?? "") === myHash) problems.push(`본문이 ${where}와 완전히 같음`);
       else if (!isComment && body.length > 200 && jaccard(myShingles, shingles(o.body ?? "")) >= 0.85) problems.push(`본문이 ${where}와 거의 같음 (유사도 85% 이상)`);
     }

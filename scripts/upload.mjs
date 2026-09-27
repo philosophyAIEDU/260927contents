@@ -52,7 +52,7 @@ const idIdx = args.indexOf("--id");
 const wantedId = idIdx >= 0 ? args[idIdx + 1] : null;
 // 예: --allow-missing published_at  (테스트 업로드용 예외. 기본은 모든 필수 태그 필요)
 const amIdx = args.indexOf("--allow-missing");
-const allowMissing = amIdx >= 0 ? args[amIdx + 1].split(",") : [];
+const allowMissing = amIdx >= 0 ? (args[amIdx + 1] ?? "").split(",").filter(Boolean) : [];
 if (!all && !wantedId) {
   console.error("--id <문서id> 또는 --all 을 지정하세요.");
   process.exit(1);

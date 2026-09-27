@@ -1,8 +1,8 @@
 // 결과물 1건을 Firestore contents_output 에 저장한다. 기본은 dry-run, --commit을 붙여야 저장한다.
 //
-//   node scripts/save-output.mjs --file processed/_outputs/thread-01.json            검증만
-//   node scripts/save-output.mjs --file processed/_outputs/thread-01.json --commit   저장
-//   node scripts/save-output.mjs --draft drafts/script/2026-09-27_주제.md --commit    초고(.md)를 바로 저장
+//   node scripts/save-output.mjs --file reports/feedback/2026-10-05_주제.json            검증만
+//   node scripts/save-output.mjs --file reports/feedback/2026-10-05_주제.json --commit   저장
+//   node scripts/save-output.mjs --draft drafts/script/2026-09-27_주제.md --commit    초고(.md)를 바로 저장 (/draft 가 자동으로 한다)
 //     - 같은 초고 경로는 같은 문서 id를 쓰므로 다시 실행하면 새로 쌓이지 않고 덮어쓴다(updatedAt 갱신)
 //     - 검수 메모가 비었거나 "(검수 중)"이면, 미해결 항목이 있으면 거부한다(--allow-unresolved 로 무시 가능)
 //
@@ -40,7 +40,7 @@ if (draft) {
   const text = (await readFile(path.resolve(ROOT, draft), "utf-8")).replace(/\r\n/g, "\n");
   const title = (text.match(/^# (.+)$/m)?.[1] ?? "").replace(/\s+—\s+[^—]*초고\s*$/, "").trim();
   const type = text.match(/^- 채널:\s*(.+)$/m)?.[1]?.trim() ?? "";
-  const sourceIds = text.match(/^- 근거 자료:\s*(.+)$/m)?.[1]?.match(/[a-z]+-\d+/g) ?? [];
+  const sourceIds = text.match(/^- 근거 자료:\s*(.+)$/m)?.[1]?.match(/(?:comment-)?[a-z]+-\d+(?:-\d+)?/g) ?? [];
   const startAt = text.search(/^## 초고\s*$/m);
   const endAt = text.search(/^## 적용한 규칙/m);
   const body = startAt < 0 ? "" : text.slice(text.indexOf("\n", startAt) + 1, endAt < 0 ? undefined : endAt).trim();
